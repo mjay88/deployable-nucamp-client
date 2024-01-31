@@ -2,7 +2,7 @@ import React from "react";
 import CampsiteCard from "./CampsiteCard";
 import { Col, Row } from "reactstrap";
 import { selectAllCampsites } from "./campsitesSlice";
-const CampsiteLists = () => {
+const CampsitesLists = () => {
 	const campsites = selectAllCampsites();
 	return (
 		<>
@@ -17,4 +17,4 @@ const CampsiteLists = () => {
 	);
 };
 
-export default CampsiteLists;
+export default CampsitesLists;
