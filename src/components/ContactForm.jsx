@@ -8,6 +8,7 @@ const ContactForm = () => {
 	const handleSubmit = (values, { resetForm }) => {
 		console.log("form values:", values);
 		console.log("in JSON format:", JSON.stringify(values));
+		//send form info to backend
 		resetForm();
 	};
 
