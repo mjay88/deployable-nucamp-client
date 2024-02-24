@@ -4,7 +4,7 @@ import { COMMENTS } from "../../app/shared/COMMENTS";
 const initialState = {
 	commentsArray: COMMENTS,
 };
-
+// state:{comment: {value}, campsite: {value}}
 const commentsSlice = createSlice({
 	name: "comments",
 	initialState,

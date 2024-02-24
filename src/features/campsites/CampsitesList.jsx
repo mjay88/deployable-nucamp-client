@@ -3,9 +3,29 @@ import { useSelector } from "react-redux";
 import CampsiteCard from "./CampsiteCard";
 import { Col, Row } from "reactstrap";
 import { selectAllCampsites } from "./campsitesSlice";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 const CampsitesList = () => {
+	const isLoading = useSelector((state) => state.campsites.isLoading);
+	const errMsg = useSelector((state) => state.campsites.errMsg);
 	const campsites = useSelector(selectAllCampsites);
+
+	if (isLoading) {
+		return (
+			<Row>
+				<Loading />
+			</Row>
+		);
+	}
+
+	if (errMsg) {
+		return (
+			<Row>
+				<Error errMsg={errMsg} />
+			</Row>
+		);
+	}
 	return (
 		<Row className="ms-auto">
 			{campsites?.map((campsite) => {
