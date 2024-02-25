@@ -12,13 +12,16 @@ import { Route, Routes } from "react-router-dom";
 import CampsiteDetailPage from "./pages/CampsiteDetailPage.jsx";
 import { fetchCampsites } from "./features/campsites/campsitesSlice.js";
 import { fetchPartners } from "./features/partners/partnersSlice.js";
+import { fetchPromotions } from "./features/promotions/promotionsSlice.js";
 
 function App() {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(fetchCampsites());
 		dispatch(fetchPartners());
+		dispatch(fetchPromotions());
 	}, [dispatch]);
+
 	return (
 		<div className="App">
 			<Header />
